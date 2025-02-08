@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Examen_Martin-Fuentes_Maria-Eugenia</string>
+    <string name="loginSuccess">Se ha logueado correctamente</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="emailUsername">Introduzca su e-mail o username</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="welcome">Bienvenido/a tu app</string>
+</resources>

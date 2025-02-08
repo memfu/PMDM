@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background_app"
+    android:padding="16dp"
+    >
+
+
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cvDatos"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDatos"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/background_component"
+        app:layout_constraintTop_toBottomOf="@+id/tvBienvenida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogIn"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tvlabelUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:textSize="28dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                />
+            <EditText
+                android:id="@+id/etUser"
+                android:layout_width="300dp"
+                android:layout_height="27dp"
+                android:background="@color/sections"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:hint="@string/emailUsername"
+                android:textColorHint="@color/hint"
+                android:textSize="18sp"
+                android:layout_marginBottom="30dp"
+                />
+
+            <TextView
+                android:id="@+id/tvlabelPW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pass"
+                android:textSize="28dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                />
+            <EditText
+                android:id="@+id/etPW"
+                android:layout_width="300dp"
+                android:layout_height="27dp"
+                android:background="@color/sections"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginBottom="30dp"
+                />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cvDatos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp"
+        android:text="@string/login"
+        android:textSize="32dp"
+        android:backgroundTint="@color/buttons"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
