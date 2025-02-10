@@ -21,7 +21,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
-    private val apiKey = "ae9427e0"
+
+    // TODO: conseguir una APIKEY de https://www.omdbapi.com/
+    private val apiKey = ""
 
     private lateinit var peliAdapter: PeliAdapter
     private var peliList = mutableListOf<Peli>() // necesitamos una lista preparada que pueda cambiar de valores
