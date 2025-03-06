@@ -5,16 +5,35 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.unirfp.examen_2aev_martinfuentes_mariaeugenia.databinding.ActivityMainBinding
+import com.unirfp.examen_2aev_martinfuentes_mariaeugenia.model.Producto
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: ProductAdapter
+    private val productoList = mutableListOf<Producto>()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        initRecyclerView()
+        fetchProductos("products")
+    }
+
+    private fun initRecyclerView() {
+        adapter = ProductAdapter(productoList)
+
     }
 }
